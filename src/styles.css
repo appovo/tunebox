@@ -1,0 +1,30 @@
+body {
+  background: black;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 20px;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+.Metadata {
+  width: 500px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: darkslategray;
+  color: rgb(228, 228, 228);
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: "Lato";
+}
+
+.Metadata span {
+  color: rgb(26, 231, 19);
+}

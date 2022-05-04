@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Square+Peg&family=Oxygen:wght@300&family=Lato&display=swap");
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-family: "Press Start 2P";
+  font-size: large;
+}
+
+.Header {
+  font-size: 70px;
+  font-family: "Square Peg";
+}

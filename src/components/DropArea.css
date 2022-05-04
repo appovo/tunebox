@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.Dropzone {
+  width: 500px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: darkslategray;
+  color: rgb(228, 228, 228);
+  border-radius: 5px;
+  font-family: "LAto", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-style: solid;
+  border-color: black;
+  font-size: 16px;
+}
+
+.DropzoneFileName {
+  color: rgb(26, 231, 19);
+  font-size: 20px;
+}
