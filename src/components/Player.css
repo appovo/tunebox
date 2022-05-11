@@ -1,4 +1,4 @@
-.SongPlayer {
+.Player {
   width: 500px;
   margin: 0 auto;
   padding: 10px 10px 20px;
@@ -11,14 +11,7 @@
   margin-top: 10px;
 }
 
-.SongPlayer img {
-  margin: 10px 20px 20px;
-  border-radius: 5px;
-  width: 250px;
-  height: 250px;
-}
-
-.SongPlayer button {
+.Player button {
   padding: 5px;
   margin: 10px 10px 0px 10px;
   border-radius: 3px;
@@ -52,18 +45,15 @@
   border-radius: 2px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 20px;
   cursor: pointer;
 }
 
 .ProgressBar2 {
-  width: 1%;
   height: 3px;
   padding-bottom: 15px;
   background-color: rgb(49, 184, 22);
   color: white;
   border-radius: 2px;
   cursor: pointer;
-  justify-content: start !important;
 }
