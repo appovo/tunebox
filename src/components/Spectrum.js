@@ -2,14 +2,19 @@ import AudioSpectrum from "react-audio-spectrum";
 import { useState, useEffect } from "react";
 import "./Spectrum.css";
 
-export function Spectrum({ audioEle, audioUrl }) {
+export function Spectrum({ audioUrl }) {
+  const [id, setId] = useState("");
+  useEffect(() => {
+    setId(audioUrl + "_Spectrum");
+  }, [audioUrl]);
   return (
     <div className="AudioSpectrum">
       <AudioSpectrum
         id="audio-canvas"
+        key={id}
         height={200}
         width={520}
-        audioEle={audioEle}
+        audioId={audioUrl}
         capColor={"lightgreen"}
         capHeight={2}
         meterWidth={2}

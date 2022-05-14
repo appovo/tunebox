@@ -1,38 +1,25 @@
-import { useState, useEffect } from "react";
+import { useRef } from "react";
 import { ProgressBar } from "./ProgressBar";
 import { PlayerButtons } from "./PlayerButtons";
 import "./Spectrum.css";
 import "./Player.css";
 import { Spectrum } from "./Spectrum";
 
-export function Player({
-  showControls = false,
-  song
-  // audioContext,
-  // decodedAudio
-}) {
-  const { audioUrl } = song;
-  const audioObj = new Audio(audioUrl);
-
-  const [progressWidth, setProgressWidth] = useState(1);
-
-  useEffect(() => {
-    // setIsStopped(true);
-    console.log("here");
-  }, [audioUrl]);
+export function Player({ showControls = false, audioUrl }) {
+  const audioRef = useRef();
 
   return (
     <>
-      <Spectrum audioUrl={audioUrl} audioEle={audioObj} />
-      <ProgressBar progressWidth={progressWidth} />
+      <Spectrum audioUrl={audioUrl} />
+      <ProgressBar audioRef={audioRef} />
       <section className="Player">
-        <PlayerButtons
-          audioUrl={audioUrl}
-          audioObj={audioObj}
-          // audioContext={audioContext}
-          // decodedAudio={decodedAudio}
-        />
-        <audio key={audioUrl} controls={showControls} id={audioUrl}>
+        <PlayerButtons audioUrl={audioUrl} audioRef={audioRef} />
+        <audio
+          key={audioUrl}
+          controls={showControls}
+          id={audioUrl}
+          ref={audioRef}
+        >
           <source src={audioUrl} />
         </audio>
       </section>

@@ -3,13 +3,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
 import StopIcon from "@mui/icons-material/Stop";
 
-export function PlayerButtons({
-  audioUrl,
-  audioContext,
-  decodedAudio,
-  audioObj,
-  audioRef
-}) {
+export function PlayerButtons({ audioUrl, audioRef }) {
   const [isPaused, setIsPaused] = useState(false);
   const [isStopped, setIsStopped] = useState(true);
 
@@ -19,39 +13,13 @@ export function PlayerButtons({
     setIsStopped(true);
   }, [audioUrl]);
 
-  // const [audioBuffer, setaAudioBuffer] = useState({});
-
-  // function play() {
-  //   const playSound = audioContext?.createBufferSource();
-  //   playSound.buffer = decodedAudio;
-  //   playSound.connect(audioContext.destination);
-  //   playSound.start(audioContext.currentTime);
-  //   setaAudioBuffer(playSound);
-  // }
-
-  // function stop() {
-  //   if (audioBuffer !== {}) {
-  //     audioBuffer.stop();
-  //   }
-  // }
-
-  // function suspend() {
-  //   audioContext.suspend();
-  // }
-
-  // function resume() {
-  //   audioContext.resume();
-  // }
-
   return (
     <div>
       <button
         onClick={() => {
-          // stop();
-          audioObj.load();
+          audioRef.current.load();
           setIsPaused(false);
           setIsStopped(true);
-          console.log(audioObj.currentTime);
         }}
       >
         <StopIcon />
@@ -59,11 +27,9 @@ export function PlayerButtons({
       {isPaused || isStopped ? (
         <button
           onClick={() => {
-            audioObj.play();
-            // audioContext.state === "suspended" ? resume() : play();
+            audioRef.current.play();
             setIsPaused(false);
             setIsStopped(false);
-            console.log(audioObj.currentTime);
           }}
           style={{ backgroundColor: isStopped ? "lightblue" : "goldenrod" }}
         >
@@ -72,11 +38,10 @@ export function PlayerButtons({
       ) : (
         <button
           onClick={() => {
-            audioObj.pause();
-            // suspend();
+            audioRef.current.pause();
             setIsPaused(true);
             setIsStopped(false);
-            console.log(audioObj.currentTime);
+            console.log(audioRef.current.currentTime);
           }}
           style={{ backgroundColor: "goldenrod" }}
         >
